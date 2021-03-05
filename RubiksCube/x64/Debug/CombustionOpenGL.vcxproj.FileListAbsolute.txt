@@ -1,0 +1,2 @@
+D:\Programme\FH\Portfolio\RubiksCube\RubiksCube\x64\Debug\RubiksCube.exe
+D:\Programme\FH\Portfolio\RubiksCube\RubiksCube\x64\Debug\RubiksCube.pdb

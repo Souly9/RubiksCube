@@ -1,0 +1,403 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Utilities">
+      <UniqueIdentifier>{a15ba98a-96c2-4ef9-9d8e-ac339e111eda}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{bc8965fa-0faf-4de6-ac5c-a1bde6ea2d0e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Application">
+      <UniqueIdentifier>{004d9d10-29a9-4fcd-8711-7c9ec9e1470b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Input">
+      <UniqueIdentifier>{12679891-719a-4a8a-93dc-a2d4711a4aec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Wrappers">
+      <UniqueIdentifier>{06f22d84-a04b-438f-a092-cf70b9eadb17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Wrappers\Lights">
+      <UniqueIdentifier>{49fbb62d-b1db-462f-a27b-a2a0843aec52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Wrappers\Materials">
+      <UniqueIdentifier>{2d74fa4d-28fc-40b1-91db-f8db1ffecdcb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Wrappers\Meshes">
+      <UniqueIdentifier>{65c458bf-cca0-4287-83ec-6c70dbab383d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Application\RubixCube">
+      <UniqueIdentifier>{417821a6-eb2b-4f2a-9817-dd2f87752481}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utilities\Input">
+      <UniqueIdentifier>{6fe6e0d0-101c-4c0d-befd-8abd1771afd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utilities\Rendering">
+      <UniqueIdentifier>{27ecca48-7521-49a4-a826-51a98a81f7a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Rendering">
+      <UniqueIdentifier>{7341f65a-728b-4be1-8cc3-ce293e2907c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Rendering\Batching">
+      <UniqueIdentifier>{0340346e-4e4a-46c7-8823-e4771f04616e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SignalSystem">
+      <UniqueIdentifier>{d43b9661-5a3b-4dcb-8ed6-afaaa3b05fd1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utilities\Files">
+      <UniqueIdentifier>{873754fd-09fa-4d6c-b0ad-b94dfd899482}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Application">
+      <UniqueIdentifier>{94d8d726-0c4b-4840-9a36-c6448baf5d87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Application\RubixCube">
+      <UniqueIdentifier>{4e1ef646-2eaf-40b9-91d6-5d8150bf5e8d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Input">
+      <UniqueIdentifier>{20930470-b41e-413f-b41f-a6d2aaa1f8e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\SignalSystem">
+      <UniqueIdentifier>{36be6007-db98-4d0e-9b0b-81830b0a1069}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Rendering">
+      <UniqueIdentifier>{ac7883ce-e3c4-49aa-b392-e7dbc3778bc6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Rendering\Batching">
+      <UniqueIdentifier>{9083cb74-8916-4c1e-8985-f04ee2b7c61c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Utilities">
+      <UniqueIdentifier>{1df07dba-f14d-41b3-adb3-24d1da5ee7aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Wrappers">
+      <UniqueIdentifier>{219d6a70-79df-49f2-b78a-2e6be3371629}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Utilities\Input">
+      <UniqueIdentifier>{003131e9-a81a-4419-a765-57810880cfe8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Utilities\Files">
+      <UniqueIdentifier>{3bf485b5-9f48-4cd7-a52a-2a610075c902}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Utilities\Rendering">
+      <UniqueIdentifier>{604340b8-1579-4852-ae7a-1c72f1021ac7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Wrappers\Lights">
+      <UniqueIdentifier>{19e2e4c4-2524-4f39-a8bf-44fa20f301da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Wrappers\Meshes">
+      <UniqueIdentifier>{56b98a0b-f1c7-4294-9439-17b86548edfb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Wrappers\Materials">
+      <UniqueIdentifier>{715b9dd5-37f3-4557-aa9a-a6a6428c726f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Textures">
+      <UniqueIdentifier>{d221f001-97e4-48fa-aeb3-6fac767c1c0d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Src\stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\ArcBall.cpp">
+      <Filter>Source Files\Utilities\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Camera.cpp">
+      <Filter>Source Files\Wrappers</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Cubie.cpp">
+      <Filter>Source Files\Application\RubixCube</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\DataHolder.cpp">
+      <Filter>Source Files\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Entrypoint.cpp">
+      <Filter>Source Files\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\ForwardRenderer.cpp">
+      <Filter>Source Files\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\GeometryBatch.cpp">
+      <Filter>Source Files\Rendering\Batching</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\GeometryManager.cpp">
+      <Filter>Source Files\Rendering\Batching</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\InputSignals.cpp">
+      <Filter>Source Files\SignalSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\LightManager.cpp">
+      <Filter>Source Files\Wrappers\Lights</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Material.cpp">
+      <Filter>Source Files\Wrappers\Materials</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\MaterialUtilities.cpp">
+      <Filter>Source Files\Utilities\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Program.cpp">
+      <Filter>Source Files\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\RayCaster.cpp">
+      <Filter>Source Files\Utilities\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\RenderBatch.cpp">
+      <Filter>Source Files\Rendering\Batching</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\RubixCube.cpp">
+      <Filter>Source Files\Application\RubixCube</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\RubixCubeApp.cpp">
+      <Filter>Source Files\Application\RubixCube</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Scene.cpp">
+      <Filter>Source Files\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes.cpp">
+      <Filter>Source Files\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\stb_image stuff.cpp">
+      <Filter>Source Files\Utilities\Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\ObjReader.cpp">
+      <Filter>Source Files\Utilities\Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\TextureManager.cpp">
+      <Filter>Source Files\Utilities\Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\TextureReader.cpp">
+      <Filter>Source Files\Utilities\Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\WindowManager.cpp">
+      <Filter>Source Files\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Mesh3D.cpp">
+      <Filter>Source Files\Wrappers\Meshes</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Object.cpp">
+      <Filter>Source Files\Wrappers\Meshes</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\InputManager.cpp">
+      <Filter>Source Files\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Include\glad.c">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\DiskRotator.cpp">
+      <Filter>Source Files\Application\RubixCube</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Renderer.cpp">
+      <Filter>Source Files\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\RubixCubeDiskManager.cpp">
+      <Filter>Source Files\Application\RubixCube</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\DeferredRenderer.cpp">
+      <Filter>Source Files\Rendering</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Rock\Rubik_cube_white_texture.jpg">
+      <Filter>Resource Files\Textures</Filter>
+    </Image>
+    <Image Include="Rock\8D3lo.png">
+      <Filter>Resource Files\Textures</Filter>
+    </Image>
+    <Image Include="Rock\7252-normal.jpg">
+      <Filter>Resource Files\Textures</Filter>
+    </Image>
+    <Image Include="Yokohama3\posz.jpg">
+      <Filter>Resource Files\Textures</Filter>
+    </Image>
+    <Image Include="Yokohama3\negx.jpg">
+      <Filter>Resource Files\Textures</Filter>
+    </Image>
+    <Image Include="Yokohama3\negy.jpg">
+      <Filter>Resource Files\Textures</Filter>
+    </Image>
+    <Image Include="Yokohama3\negz.jpg">
+      <Filter>Resource Files\Textures</Filter>
+    </Image>
+    <Image Include="Yokohama3\posx.jpg">
+      <Filter>Resource Files\Textures</Filter>
+    </Image>
+    <Image Include="Yokohama3\posy.jpg">
+      <Filter>Resource Files\Textures</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Include\stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Program.h">
+      <Filter>Header Files\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\WindowManager.h">
+      <Filter>Header Files\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\RubixCube.h">
+      <Filter>Header Files\Application\RubixCube</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\RubixCubeEnums.h">
+      <Filter>Header Files\Application\RubixCube</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\RubixCubeApp.h">
+      <Filter>Header Files\Application\RubixCube</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\ApplicationEvents.h">
+      <Filter>Header Files\SignalSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Cubie.h">
+      <Filter>Header Files\Application\RubixCube</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\DataHolder.h">
+      <Filter>Header Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\ForwardRenderer.h">
+      <Filter>Header Files\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\GeometryBatch.h">
+      <Filter>Header Files\Rendering\Batching</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\GeometryManager.h">
+      <Filter>Header Files\Rendering\Batching</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\HighResClock.h">
+      <Filter>Header Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\InputManager.h">
+      <Filter>Header Files\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\InputSignals.h">
+      <Filter>Header Files\SignalSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Color.h">
+      <Filter>Header Files\Application\RubixCube</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\LightManager.h">
+      <Filter>Header Files\Wrappers\Lights</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\LightStructs.h">
+      <Filter>Header Files\Wrappers\Lights</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\InternalStates.h">
+      <Filter>Header Files\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Material.h">
+      <Filter>Header Files\Wrappers\Materials</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\MaterialUtilities.h">
+      <Filter>Header Files\Wrappers\Materials</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\MemoryUtilities.h">
+      <Filter>Header Files\Wrappers</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Mesh3D.h">
+      <Filter>Header Files\Wrappers\Meshes</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Object.h">
+      <Filter>Header Files\Wrappers\Meshes</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\RayCaster.h">
+      <Filter>Header Files\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\ObjReader.h">
+      <Filter>Header Files\Utilities\Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\RayStructs.h">
+      <Filter>Header Files\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\RenderBatch.h">
+      <Filter>Header Files\Rendering\Batching</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Renderer.h">
+      <Filter>Header Files\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Scene.h">
+      <Filter>Header Files\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\ShapeBaseArrays.h">
+      <Filter>Header Files\Utilities\Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Shader.h">
+      <Filter>Header Files\Utilities\Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Shapes.h">
+      <Filter>Header Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\ArcBall.h">
+      <Filter>Header Files\Utilities\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Camera.h">
+      <Filter>Header Files\Wrappers</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\stb_image.h">
+      <Filter>Header Files\Utilities\Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\TextureManager.h">
+      <Filter>Header Files\Utilities\Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\TextureReader.h">
+      <Filter>Header Files\Utilities\Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\VertexAttribPointer.h">
+      <Filter>Header Files\Utilities\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\VertexStructs.h">
+      <Filter>Header Files\Utilities\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glad.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\DiskRotator.h">
+      <Filter>Header Files\Application\RubixCube</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\RubixCubeDiskManager.h">
+      <Filter>Header Files\Application\RubixCube</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\DeferredRenderer.h">
+      <Filter>Header Files\Rendering</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="Shaders\DefaultDeferredFrag.frag">
+      <Filter>Shaders</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="Shaders\DeferredLightingFrag.frag">
+      <Filter>Shaders</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="Shaders\Phong.frag">
+      <Filter>Shaders</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="Shaders\DummyVert.vs">
+      <Filter>Shaders</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="Shaders\PhongNormalMap.frag">
+      <Filter>Shaders</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="Shaders\PlainVert.vs">
+      <Filter>Shaders</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="Shaders\PlainVertNormalMap.vs">
+      <Filter>Shaders</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="Shaders\SkyboxFrag.frag">
+      <Filter>Shaders</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="Shaders\SkyboxFragDeferred.frag">
+      <Filter>Shaders</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="Shaders\SkyboxVert.vs">
+      <Filter>Shaders</Filter>
+    </CopyFileToFolders>
+  </ItemGroup>
+</Project>
