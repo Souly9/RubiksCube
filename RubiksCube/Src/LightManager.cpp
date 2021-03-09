@@ -49,7 +49,8 @@ bool LightManager::SubmitLightBuffer()
 	{
 		glGenBuffers(1, &m_bufferHandle);
 		glBindBufferBase(GL_UNIFORM_BUFFER, m_bufferIndex, m_bufferHandle);
-		glBufferData(GL_UNIFORM_BUFFER, sizeof(PointLight) * COMBUSTION_MAX_FORWARD_LIGHTS + 7, nullptr,
+		glBindBuffer(GL_UNIFORM_BUFFER, m_bufferHandle);
+		glBufferData(GL_UNIFORM_BUFFER, sizeof(PointLight) * COMBUSTION_MAX_FORWARD_LIGHTS + sizeof(glm::vec4) + sizeof(glm::vec4), nullptr,
 		             GL_STATIC_DRAW);
 		glBindBuffer(GL_UNIFORM_BUFFER, 0);
 		m_isDirty = true;
@@ -58,11 +59,11 @@ bool LightManager::SubmitLightBuffer()
 
 	if (m_isDirty)
 	{
-		const glm::vec3 c = DataHolder::Get()->GetCameraRaw()->GetPosition();
-		glBindBufferBase(GL_UNIFORM_BUFFER, m_bufferIndex, m_bufferHandle);
+		const glm::vec3 pos = DataHolder::Get()->GetCameraRaw()->GetPosition();
+		glBindBuffer(GL_UNIFORM_BUFFER, m_bufferHandle);
 		glBufferSubData(GL_UNIFORM_BUFFER, 0, sizeof(glm::vec4), &m_pBuffer->m_ambientStrength);
-		glBufferSubData(GL_UNIFORM_BUFFER, sizeof(glm::vec4), (sizeof(float) * 3), &c);
-		glBufferSubData(GL_UNIFORM_BUFFER, sizeof(glm::vec4) + (sizeof(float) * 3), sizeof(PointLight) * m_pBuffer->m_pointLights.size(),
+		glBufferSubData(GL_UNIFORM_BUFFER, sizeof(glm::vec4), sizeof(glm::vec4), &pos);
+		glBufferSubData(GL_UNIFORM_BUFFER, sizeof(glm::vec4) + sizeof(glm::vec4), sizeof(PointLight) * m_pBuffer->m_pointLights.size(),
 		                m_pBuffer->m_pointLights.data());
 		glBindBuffer(GL_UNIFORM_BUFFER, 0);
 	}
