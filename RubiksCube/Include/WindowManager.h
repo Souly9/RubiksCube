@@ -17,8 +17,8 @@ public:
 
 	void Close() noexcept;
 
-	uint32_t GetScreenHeight() const noexcept { return m_screenHeight; }
-	uint32_t GetScreenWidth() const noexcept { return m_screenWidth; }
+	int GetScreenHeight() const noexcept { return m_screenHeight; }
+	int GetScreenWidth() const noexcept { return m_screenWidth; }
 private:
 	WindowManager() = delete;
 	WindowManager(const WindowManager& copy) = delete;
@@ -27,6 +27,6 @@ private:
 	std::unique_ptr<GLFWwindow, DestroyglfwWin> m_pWindow;
 	std::unique_ptr<InputManager> m_pInputManager;
 
-	uint32_t m_screenHeight;
-	uint32_t m_screenWidth;
+	int m_screenHeight;
+	int m_screenWidth;
 };

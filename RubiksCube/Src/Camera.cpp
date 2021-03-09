@@ -12,7 +12,11 @@ Camera::Camera(float fov, float zNear, float zFar, float aspectRatio,
 {
 	m_rotatorState = ShouldIgnore;
 	SignalSystem::InputSignals::Get()->onMouseScroll.connect([this](const auto& val){Scroll(val);});
-	SignalSystem::ApplicationEvents::Get()->onScreenResize.connect([this](const glm::vec2& size) {m_AspectRatio = size.x / size.y;});
+	SignalSystem::ApplicationEvents::Get()->onScreenResize.connect([this](const glm::vec2& size)
+	{
+		m_AspectRatio = size.x / size.y;
+		m_isDirty = true;
+	});
 	const auto p = static_cast<AlignedCameraData*>(_aligned_malloc(sizeof(AlignedCameraData), 16));
 	m_pData = std::unique_ptr<AlignedCameraData>(p);
 	m_pData->m_target = glm::vec4(0,0,0,1);
@@ -35,7 +39,7 @@ void Camera::UpdateMatrices()
 	if (m_isDirty)
 	{
 		m_pData->m_projMatrix = glm::perspective(glm::radians(m_FoV), m_AspectRatio, m_zNear, m_zFar);
-		LookAt(m_pData->m_rotationQuat * m_pData->m_position, m_pData->m_target, m_pData->m_upDirection);
+		LookAt( m_pData->m_position, m_pData->m_target, m_pData->m_upDirection);
 		m_pData->m_viewProjMatrix = m_pData->m_projMatrix * m_pData->m_viewMatrix;
 		m_isDirty = false;
 	}

@@ -15,7 +15,9 @@ m_screenQuad(ScreenQuad::CreateScreenQuad())
 	const auto pos = TextureManager::Get()->GetFrameBufferTexture(x, y, GL_RGBA16F, GL_RGBA, GL_FLOAT, GL_COLOR_ATTACHMENT0);
 	const auto normal = TextureManager::Get()->GetFrameBufferTexture(x, y, GL_RGBA16F, GL_RGBA, GL_FLOAT, GL_COLOR_ATTACHMENT1);
 	const auto albedoSpec = TextureManager::Get()->GetFrameBufferTexture(x, y, GL_RGBA, GL_RGBA, GL_UNSIGNED_BYTE, GL_COLOR_ATTACHMENT2);
-	
+	m_textureHandles[0] = pos;
+	m_textureHandles[1] = normal;
+	m_textureHandles[2] = albedoSpec;
 	unsigned int rbo;
 	glGenRenderbuffers(1, &rbo);
 	glBindRenderbuffer(GL_RENDERBUFFER, rbo); 
@@ -64,6 +66,8 @@ void DeferredRenderer::Assemble()
 {
 	// Render the G-Buffer
 	glBindFramebuffer(GL_FRAMEBUFFER, 0);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	
 	m_lightingBatch.BindShader();
 	m_lightingBatch.BindBatchUniforms();
 	
@@ -72,12 +76,7 @@ void DeferredRenderer::Assemble()
 
 void DeferredRenderer::Clear()
 {
-
 	glBindFramebuffer(GL_FRAMEBUFFER, m_gBufferHandle);
 	glClearColor(0, 0, 0, 1.0f);
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-	glBindFramebuffer(GL_FRAMEBUFFER, 0);
-	glClearColor(0, 0, 0.4f, 1.0f);
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);	
 }

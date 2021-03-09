@@ -6,7 +6,8 @@ static std::unique_ptr<DataHolder> m_pSingleton;
 DataHolder::DataHolder() : m_pClock(std::make_unique<HighResClock>())
 {
 	m_pMainCamera = std::make_unique<Camera>(90.0f, 0.1f, 1000.0f,
-	                                         WindowManager::Get().GetScreenWidth() / WindowManager::Get().GetScreenHeight(),
+	                                         static_cast<float>(WindowManager::Get().GetScreenWidth()) /
+											 static_cast<float>(WindowManager::Get().GetScreenWidth()),
 	                                         glm::vec4(0, 3, 50, 1),
 	                                         glm::quat(1, 0, 0, 0));
 }

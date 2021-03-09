@@ -45,8 +45,7 @@ RubixCubeApp::RubixCubeApp(const char* windowName) : Program{windowName}
 	
 	LoadModels();
 	SetupGLStates();
-
-	m_pForwardRenderer = std::make_unique<ForwardRenderer>();
+	
 	m_pDeferredRenderer = std::make_unique<DeferredRenderer>();
 	
 	m_pMainScene = std::make_unique<Scene>(DataHolder::Get()->GetCameraShared());

@@ -47,8 +47,7 @@ void WindowManager::Close() noexcept
 void WindowManager::FramebufferSizeCallback(GLFWwindow* window, int width, int height) noexcept
 {
 	MAYBE_UNUSED(window);
-	SignalSystem::ApplicationEvents::Get()->onScreenResize(glm::vec2(width, height));
-	glViewport(0, 0, width, height);
+	glfwSetWindowSize(window, Get().m_screenWidth, Get().m_screenHeight);
 }
 
 GLFWwindow* WindowManager::GetWindow() noexcept

@@ -15,10 +15,10 @@ public:
 	uint64_t GetFrameBufferTexture(int x, int y, GLenum type, GLenum channelTypes, GLenum valueType, GLenum target);
 	void MakeTextureResident(uint64_t textureHandle);
 	static void ReleaseTexture(uint64_t arbTextureHandle);
-
+	void RemoveTexture(uint64_t handle);
 private:
 	uint64_t m_textureHandles[COMBUSTION_TEXTURE_LIMIT];
-	uint64_t* m_freePos;
+	unsigned int m_freeSlots;
 	std::unique_ptr<TextureReader> m_reader;
 };
 
