@@ -47,8 +47,8 @@ void main()
 	vec3 albedo = texture(albedoBuffer, IN.TexCoords).xyz;
 	vec3 viewDir = normalize(worldPos.xyz - Lights.cameraPos);
 
-	vec3 rslt = albedo;
-	rslt *= (texture(skybox, reflect(viewDir, normal)).xyz);
+	vec3 rslt = albedo * 3;
+	//rslt = (texture(skybox, reflect(viewDir, normal)).xyz);
 
 	vec3 lighting = vec3(0);
 	for(int i = 0; i<MAX_LIGHTS;++i)
@@ -61,7 +61,6 @@ void main()
 		
 		vec3 lightDir = normalize(worldPos.xyz - light.pos.xyz);
 		
-		vec3 reflectDir = reflect(-lightDir, normal);
 		 vec3 halfwayDir = normalize(lightDir + viewDir);  
 		float diff = max(dot(normal, lightDir), 0);
 		float spec = pow(max(dot(viewDir, halfwayDir), 0.0), 2);
@@ -76,6 +75,8 @@ void main()
 		lighting += (ambient + diffuse + specular);
 	}
 	rslt *= lighting;
+	// Otherwise the rubix cube colors are too dark
+	rslt *= (texture(skybox, reflect(viewDir, normal)).xyz * 9);
 	
 	if(posVals.w > 0.9)
 	{

@@ -57,7 +57,6 @@ RubixCubeApp::RubixCubeApp(const char* windowName) : Program{windowName}
 	m_pMainScene->GetLightManager()->AddLight(light);
 	light = PointLight{glm::vec4(0, -3, 0, 1),
 		glm::vec4(1, 1, 1, 1)};
-	
 	m_pMainScene->GetLightManager()->AddLight(light);
 }
 
