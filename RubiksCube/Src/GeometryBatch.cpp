@@ -50,8 +50,7 @@ void GeometryBatch::FillBuffer(const std::vector<std::shared_ptr<Mesh3D>>& geome
 	// Initialize the pointer for the vertex positions
 	uint64_t chunkLength = 3, index = 0;
 	m_attribPointers.emplace_back(chunkLength, index, 0);
-	index++;
-	uint64_t offset = bufferElements * chunkLength * index;
+	uint64_t offset = bufferElements * chunkLength;
 	{
 		// Initialize any optional pointers
 		for (uint32_t a = 0; a < attributes.size(); ++a)
@@ -60,6 +59,7 @@ void GeometryBatch::FillBuffer(const std::vector<std::shared_ptr<Mesh3D>>& geome
 			{
 			case(ShaderAttribute::NORMALS):
 				{
+					index = 1;
 					chunkLength = 3;
 					for (uint32_t i = 0; i < geometry.size(); ++i)
 					{
@@ -69,6 +69,7 @@ void GeometryBatch::FillBuffer(const std::vector<std::shared_ptr<Mesh3D>>& geome
 				}
 			case(ShaderAttribute::VERTEXCOLOR):
 				{
+					index = 3;
 					chunkLength = 3;
 					for (uint32_t i = 0; i < geometry.size(); ++i)
 					{
@@ -78,6 +79,7 @@ void GeometryBatch::FillBuffer(const std::vector<std::shared_ptr<Mesh3D>>& geome
 				}
 			case(ShaderAttribute::TANGENTSPACE):
 				{
+					index = 4;
 					chunkLength = 3;
 					for (uint32_t i = 0; i < geometry.size(); ++i)
 					{
@@ -88,7 +90,8 @@ void GeometryBatch::FillBuffer(const std::vector<std::shared_ptr<Mesh3D>>& geome
 					offset += bufferElements * chunkLength;
 					tmp.BindPointer();
 					m_attribPointers.push_back(tmp);
-					index++;
+
+					index = 5;
 
 					for (uint32_t i = 0; i < geometry.size(); ++i)
 					{
@@ -98,6 +101,7 @@ void GeometryBatch::FillBuffer(const std::vector<std::shared_ptr<Mesh3D>>& geome
 				}
 			case(ShaderAttribute::TEXCOORDS):
 				{
+					index = 2;
 					chunkLength = 2;
 					for (uint32_t i = 0; i < geometry.size(); ++i)
 					{
@@ -110,7 +114,6 @@ void GeometryBatch::FillBuffer(const std::vector<std::shared_ptr<Mesh3D>>& geome
 			const VertexAttribPointer tmp(chunkLength, index, offset);
 			offset += bufferElements * chunkLength;
 			m_attribPointers.push_back(tmp);
-			index++;
 		}
 	}
 

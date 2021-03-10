@@ -1,7 +1,7 @@
 #version 420 core
 #extension GL_ARB_bindless_texture : enable
 #extension GL_NV_gpu_shader5 : enable
-#define MAX_LIGHTS 10
+#define MAX_LIGHTS 3
 
 struct PointLight
 {
@@ -40,43 +40,47 @@ uniform sampler2D albedoBuffer;
 uniform samplerCube skybox;
 
 void main()
-{
-	vec3 rslt = vec3(0);
+{	
 	vec4 posVals = texture(positionBuffer, IN.TexCoords);
 	vec4 worldPos = vec4(posVals.xyz, 1);
 	vec3 normal = texture(normalBuffer, IN.TexCoords).rgb;
 	vec3 albedo = texture(albedoBuffer, IN.TexCoords).xyz;
 	vec3 viewDir = normalize(worldPos.xyz - Lights.cameraPos);
 
+	vec3 rslt = albedo;
+	rslt *= (texture(skybox, reflect(viewDir, normal)).xyz);
+
+	vec3 lighting = vec3(0);
 	for(int i = 0; i<MAX_LIGHTS;++i)
 	{
 		PointLight light = Lights.lights[i];
 		vec3 lightPos = light.pos.xyz;
 
 		float distance    = length(light.pos - worldPos);
-		float attenuation = 1.0 / (distance); 
+		float attenuation = 1.0 / (distance * distance); 
 		
 		vec3 lightDir = normalize(worldPos.xyz - light.pos.xyz);
 		
 		vec3 reflectDir = reflect(-lightDir, normal);
-
+		 vec3 halfwayDir = normalize(lightDir + viewDir);  
 		float diff = max(dot(normal, lightDir), 0);
-		float spec = pow(max(dot(viewDir, reflectDir), 0.0), 128);
+		float spec = pow(max(dot(viewDir, halfwayDir), 0.0), 2);
 
-		vec3 specular = spec * light.color.xyz * albedo;
-		vec3 diffuse = diff * light.color.xyz * albedo;
-		vec3 ambient = vec3(Lights.ambientStrength) * albedo;
+		vec3 specular = spec * light.color.xyz;
+		vec3 diffuse = diff * light.color.xyz;
+		vec3 ambient = vec3(Lights.ambientStrength);
 
 		specular *= attenuation;
 		diffuse *= attenuation;
 		ambient *= attenuation;
-		rslt += (ambient + diffuse + specular);
+		lighting += (ambient + diffuse + specular);
 	}
-	rslt *= texture(skybox, reflect(viewDir, normal)).xyz;
+	rslt *= lighting;
 	
-	float gamma = 2.2;
-    rslt.rgb = pow(rslt.rgb, vec3(1.0/gamma));
 	if(posVals.w > 0.9)
+	{
 		rslt = albedo;
+	}
+	
 	FragColor = vec4(rslt, 1);	
 }

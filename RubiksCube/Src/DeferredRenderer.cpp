@@ -14,7 +14,7 @@ m_screenQuad(ScreenQuad::CreateScreenQuad())
 	const auto y = WindowManager::Get().GetScreenHeight();
 	const auto pos = TextureManager::Get()->GetFrameBufferTexture(x, y, GL_RGBA16F, GL_RGBA, GL_FLOAT, GL_COLOR_ATTACHMENT0);
 	const auto normal = TextureManager::Get()->GetFrameBufferTexture(x, y, GL_RGBA16F, GL_RGBA, GL_FLOAT, GL_COLOR_ATTACHMENT1);
-	const auto albedoSpec = TextureManager::Get()->GetFrameBufferTexture(x, y, GL_RGBA, GL_RGBA, GL_UNSIGNED_BYTE, GL_COLOR_ATTACHMENT2);
+	const auto albedoSpec = TextureManager::Get()->GetFrameBufferTexture(x, y, GL_RGBA, GL_RGBA, GL_FLOAT, GL_COLOR_ATTACHMENT2);
 	m_textureHandles[0] = pos;
 	m_textureHandles[1] = normal;
 	m_textureHandles[2] = albedoSpec;
@@ -26,7 +26,7 @@ m_screenQuad(ScreenQuad::CreateScreenQuad())
 	glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_RENDERBUFFER, rbo);
 	glDrawBuffers(3, m_attachmentDesc);
 
-	Shader deferredShader("DummyVert.vs", "DeferredLightingFrag.frag");
+	Shader deferredShader("DummyVert.vs", "DeferredLighting.frag");
 
 	std::vector<MaterialUtilities::UniformAttribute> uniforms;
 

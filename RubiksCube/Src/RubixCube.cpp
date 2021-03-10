@@ -36,16 +36,16 @@ RubixCube::RubixCube(Mesh3D* baseMesh, std::vector<std::shared_ptr<RenderBatch>>
 	uniforms.push_back(UniformAttribute::ALBEDO);
 	uniforms.push_back(UniformAttribute::NORMALMAP);
 
-	Properties props(glm::vec3(0,0,0),
+	Properties props(glm::vec3(1,1,1),
 	                 glm::vec3(0.5, 0.5, 0),
 	                 glm::vec3(1, 1, 1),
 	                 0.3f * 128.0f);
 
 	std::shared_ptr<TextureData> tmp = std::make_unique<TextureData>();
 	tmp->m_albedo = TextureManager::Get()->GetTextureHandle(
-		"Textures/Rubik_cube_white_texture.jpg");
+		"Textures/Rubik_cube_white_texture.jpg", true);
 	tmp->m_normalMap = TextureManager::Get()->GetTextureHandle(
-		"Textures/7252-normal.jpg");
+		"Textures/7252-normal.jpg", false);
 	
 	const auto phong = std::make_shared<Material>(MaterialPreset::Default, normalShader, Program::m_materialIndex++, props, tmp, attbs);
 

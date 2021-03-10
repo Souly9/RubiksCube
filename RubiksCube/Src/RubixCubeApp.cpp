@@ -32,7 +32,7 @@ RubixCubeApp::RubixCubeApp(const char* windowName) : Program{windowName}
 
 	std::shared_ptr<TextureData> tmp = std::make_unique<TextureData>();
 	tmp->m_cubeMap = TextureManager::Get()->GetCubemapHandle(
-		"Yokohama3/");
+		"Yokohama3/", true);
 	std::vector<MaterialUtilities::ShaderAttribute> tmp2;
 	const std::shared_ptr<Material> cubeMap = std::make_shared<Material>(MaterialPreset::Default, normalShader, m_materialIndex++, props, tmp, tmp2);
 
@@ -49,14 +49,15 @@ RubixCubeApp::RubixCubeApp(const char* windowName) : Program{windowName}
 	m_pDeferredRenderer = std::make_unique<DeferredRenderer>();
 	
 	m_pMainScene = std::make_unique<Scene>(DataHolder::Get()->GetCameraShared());
-	PointLight light{glm::vec4(0, 0, 5, 1),
-		glm::vec4(0.5f, 0,0, 1)};
+	PointLight light{glm::vec4(0, 0, 3, 1),
+		glm::vec4(1, 1, 1, 1)};
 	m_pMainScene->GetLightManager()->AddLight(light);
-	light = PointLight{glm::vec4(0, 6, 0, 1),
-		glm::vec4(0.5f, 0.5f, 0.5f, 1)};
-	m_pMainScene->GetLightManager()->AddLight(light);
-	light = PointLight{glm::vec4(0, -5, 0, 1),
+	light = PointLight{glm::vec4(0, 3, 0, 1),
 		glm::vec4(1,1,1, 1)};
+	m_pMainScene->GetLightManager()->AddLight(light);
+	light = PointLight{glm::vec4(0, -3, 0, 1),
+		glm::vec4(1, 1, 1, 1)};
+	
 	m_pMainScene->GetLightManager()->AddLight(light);
 }
 
