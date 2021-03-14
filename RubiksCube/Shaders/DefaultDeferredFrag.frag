@@ -38,7 +38,7 @@ uniform samplerCube skybox;
 
 void main()
 {
-    gPosition.xyz = IN.vertPos.xyz;
+    gPosition.xyz = IN.WorldPos.xyz;
 	vec3 normal = texture(normalMap, IN.TexCoords).rgb;
 	normal = normal * 2.0f - 1.0f;
 	gNormal = normalize(IN.TBN * normal);
