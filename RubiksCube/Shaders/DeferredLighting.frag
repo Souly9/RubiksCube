@@ -59,7 +59,7 @@ void main()
 		float distance    = length(light.pos - worldPos);
 		float attenuation = 1.0 / (distance * distance); 
 		
-		vec3 lightDir = normalize(worldPos.xyz - light.pos.xyz);
+		vec3 lightDir = normalize(light.pos.xyz - worldPos.xyz);
 		
 		 vec3 halfwayDir = normalize(lightDir + viewDir);  
 		float diff = max(dot(normal, lightDir), 0);

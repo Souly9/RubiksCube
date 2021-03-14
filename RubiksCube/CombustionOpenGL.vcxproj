@@ -273,9 +273,6 @@
     <CopyFileToFolders Include="Shaders\DefaultDeferredFrag.frag">
       <FileType>Document</FileType>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="Shaders\DeferredLightingFrag.frag">
-      <FileType>Document</FileType>
-    </CopyFileToFolders>
     <CopyFileToFolders Include="Shaders\DummyVert.vs">
       <FileType>Document</FileType>
     </CopyFileToFolders>
@@ -302,6 +299,9 @@
     <CopyFileToFolders Include="Shaders\SkyboxFragDeferred.frag">
       <FileType>Document</FileType>
     </CopyFileToFolders>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Shaders\DeferredLighting.frag" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

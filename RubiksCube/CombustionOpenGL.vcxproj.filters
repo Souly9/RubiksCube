@@ -372,9 +372,6 @@
     <CopyFileToFolders Include="Shaders\DefaultDeferredFrag.frag">
       <Filter>Shaders</Filter>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="Shaders\DeferredLightingFrag.frag">
-      <Filter>Shaders</Filter>
-    </CopyFileToFolders>
     <CopyFileToFolders Include="Shaders\Phong.frag">
       <Filter>Shaders</Filter>
     </CopyFileToFolders>
@@ -399,5 +396,10 @@
     <CopyFileToFolders Include="Shaders\SkyboxVert.vs">
       <Filter>Shaders</Filter>
     </CopyFileToFolders>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Shaders\DeferredLighting.frag">
+      <Filter>Shaders</Filter>
+    </None>
   </ItemGroup>
 </Project>
