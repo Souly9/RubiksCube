@@ -45,7 +45,7 @@ void main()
 	vec4 worldPos = vec4(posVals.xyz, 1);
 	vec3 normal = texture(normalBuffer, IN.TexCoords).rgb;
 	vec3 albedo = texture(albedoBuffer, IN.TexCoords).xyz;
-	vec3 viewDir = normalize(worldPos.xyz - Lights.cameraPos);
+	vec3 viewDir = normalize(Lights.cameraPos - worldPos.xyz);
 
 	vec3 rslt = albedo * 3;
 	//rslt = (texture(skybox, reflect(viewDir, normal)).xyz);
